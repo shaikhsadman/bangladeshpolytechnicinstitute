@@ -1,0 +1,68 @@
+<!-- ================= LOGIN SCREEN ================= -->
+<div id="loginScreen">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="login-wrap">
+    <div class="login-side">
+      <div>
+        <div class="badge-pill"><span class="dot"></span> Live Academic Portal</div>
+        <div class="brand">Bangladesh Polytechnic <span>Institute</span></div>
+        <div class="tagline">One secure home for student records, attendance, and semester results — built for Admins, Teachers and Students.</div>
+      </div>
+      <div class="est">bangladeshpolytechnicinstitute.vercel.app
+        <b>Est. 2003</b>
+      </div>
+      <div class="ring ring1"></div><div class="ring ring2"></div>
+    </div>
+    <div class="login-main">
+      <div class="role-tabs">
+        <button class="role-tab active" data-role="admin" onclick="switchRole('admin')">Admin</button>
+        <button class="role-tab" data-role="teacher" onclick="switchRole('teacher')">Teacher</button>
+        <button class="role-tab" data-role="student" onclick="switchRole('student')">Student</button>
+      </div>
+      <form onsubmit="return doLogin(event)">
+        <div class="field">
+          <label id="idLabel">Admin ID</label>
+          <input id="loginId" type="text" placeholder="e.g. admin" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input id="loginPw" type="password" placeholder="Enter password" required>
+        </div>
+        <button class="login-btn" type="submit">Log in</button>
+        <div class="err-msg" id="loginErr">Incorrect ID or password. Please try again.</div>
+      </form>
+      <div class="hint-box" id="hintBox">
+        <b>Demo admin login</b> — ID: <b>admin1</b> &nbsp; Password: <b>XDbTa4pE</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= APP SCREEN ================= -->
+<div id="appScreen">
+  <div class="shell">
+    <div class="sidebar">
+      <div class="brand">Bangladesh Polytechnic <span style="color:var(--gold-500)">Institute</span></div>
+      <div class="who" id="sideWho">—</div>
+      <div id="navItems"></div>
+      <button class="logout-btn" onclick="logout()">Log out</button>
+    </div>
+    <div class="main">
+      <div class="mobile-nav" id="mobileNav"></div>
+      <div class="topbar">
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <div class="sub" id="pageSub"></div>
+        </div>
+        <button class="mobile-logout" onclick="logout()">Log out</button>
+      </div>
+      <div id="viewRoot" class="fade-in"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL (shared, for add/edit forms) ============ -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal" id="modalBox"></div>
+</div>
+<div class="toast" id="toast"><span class="dot"></span><span id="toastMsg">Saved</span></div>

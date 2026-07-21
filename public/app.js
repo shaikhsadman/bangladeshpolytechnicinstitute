@@ -403,7 +403,7 @@ function render(){
 /* ---------------- ADMIN: OVERVIEW ---------------- */
 function renderAdminOverview(root,title,sub){
   title.textContent = "Admin Overview";
-  sub.textContent = "bangladeshpolytechnicinstitute.vercel.app — full system snapshot";
+  sub.textContent = "bangladeshpolytechnicinstitute-ten.vercel.app — full system snapshot";
   const totalStudents = DB.students.length;
   const totalTeachers = DB.teachers.length;
   const avgCgpa = Math.round((DB.students.reduce((a,s)=>a+(cgpaOf(s.id)||0),0)/totalStudents)*100)/100;
